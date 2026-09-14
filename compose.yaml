@@ -1,0 +1,18 @@
+services:
+  feynman:
+    build:
+      context: .
+      args:
+        FEYNMAN_VERSION: latest
+    image: ghcr.io/denisb508/unraid-feynman:latest
+    container_name: feynman
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+    environment:
+      FEYNMAN_PORT: "8787"
+      FEYNMAN_NO_AUTH: "true"
+      TZ: "Etc/UTC"
+    volumes:
+      - ./data/config:/config
+      - ./data/workspace:/workspace
