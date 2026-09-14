@@ -16,7 +16,7 @@
   <TemplateURL>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/templates/feynman.xml</TemplateURL>
   <ReadMe>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/README.md</ReadMe>
 
-  <Category>Tools:Other</Category>
+  <Category>Tools:Utilities</Category>
   <ExtraSearchTerms>AI research papers science literature agent Feynman alphaXiv</ExtraSearchTerms>
   <Requires>Internet access is required for hosted model providers and online research sources. By default the WebUI has no built-in authentication and should only be exposed on a trusted LAN or behind an authenticated reverse proxy.</Requires>
   <Changes>2026-09-14: Initial Unraid Docker release.</Changes>
