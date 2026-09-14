@@ -41,7 +41,7 @@ VOLUME ["/config", "/workspace"]
 EXPOSE 8787
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
-  CMD-SHELL node -e "fetch('http://127.0.0.1:'+(process.env.FEYNMAN_PORT||'8787')+'/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+  CMD node -e "fetch('http://127.0.0.1:'+(process.env.FEYNMAN_PORT||'8787')+'/api/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/feynman-unraid-entrypoint"]
 CMD []
