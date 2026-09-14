@@ -1,0 +1,9 @@
+.git
+.github
+.gitignore
+README.md
+LICENSE
+NOTICE
+ca_profile.xml
+templates
+*.zip
