@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>Feynman</Name>
+  <Repository>ghcr.io/denisb508/unraid-feynman:latest</Repository>
+  <Registry>https://github.com/Denisb508/unraid-feynman/pkgs/container/unraid-feynman</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+
+  <Icon>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/icon.svg</Icon>
+  <WebUI>http://[IP]:[PORT:8787]</WebUI>
+
+  <Overview>Unofficial Unraid Docker packaging for Feynman, the open-source AI research agent by Advait Paliwal. Includes the browser-based Science Workbench for research projects, literature workflows, artifacts, notebooks and model-provider integrations.</Overview>
+  <Support>https://github.com/Denisb508/unraid-feynman/issues</Support>
+  <Project>https://github.com/advaitpaliwal/feynman</Project>
+  <TemplateURL>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/templates/feynman.xml</TemplateURL>
+  <ReadMe>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/README.md</ReadMe>
+
+  <Category>Tools:Other</Category>
+  <ExtraSearchTerms>AI research papers science literature agent Feynman alphaXiv</ExtraSearchTerms>
+  <Requires>Internet access is required for hosted model providers and online research sources. By default the WebUI has no built-in authentication and should only be exposed on a trusted LAN or behind an authenticated reverse proxy.</Requires>
+  <Changes>2026-09-14: Initial Unraid Docker release.</Changes>
+  <Date>2026-09-14</Date>
+  <MinVer>6.12</MinVer>
+  <License>MIT</License>
+
+  <Config Name="WebUI Port" Target="8787" Default="8787" Mode="tcp" Description="HTTP port for the Feynman Science Workbench." Type="Port" Display="always" Required="true" Mask="false">8787</Config>
+  <Config Name="Feynman Config" Target="/config" Default="/mnt/user/appdata/feynman/config" Mode="rw" Description="Persistent Feynman settings, sessions, credentials and Workbench state." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/feynman/config</Config>
+  <Config Name="Workspace" Target="/workspace" Default="/mnt/user/appdata/feynman/workspace" Mode="rw" Description="Research workspace containing outputs, papers, notes and project files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/feynman/workspace</Config>
+  <Config Name="Workbench Port" Target="FEYNMAN_PORT" Default="8787" Description="Internal Workbench listen port. Normally keep this at 8787." Type="Variable" Display="advanced" Required="true" Mask="false">8787</Config>
+  <Config Name="Disable Workbench Auth" Target="FEYNMAN_NO_AUTH" Default="true" Description="true = convenient trusted-LAN access. false = Feynman generates a token URL on each container start; retrieve it from the container log." Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Timezone" Target="TZ" Default="Etc/UTC" Description="Container timezone, for example Europe/Ljubljana." Type="Variable" Display="advanced" Required="false" Mask="false">Etc/UTC</Config>
+</Container>
