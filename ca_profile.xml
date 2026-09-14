@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommunityApplications>
+  <Profile>Unofficial Unraid packaging and Community Applications templates maintained by Denisb508. This repository currently packages Feynman, the open-source AI research agent by Advait Paliwal. For Docker/Unraid packaging issues use this repository's GitHub Issues; for Feynman application issues use the upstream Feynman project.</Profile>
+  <Icon>https://raw.githubusercontent.com/Denisb508/unraid-feynman/main/icon.svg</Icon>
+  <WebPage>https://github.com/Denisb508/unraid-feynman</WebPage>
+</CommunityApplications>
